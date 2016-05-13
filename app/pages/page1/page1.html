@@ -1,0 +1,10 @@
+<ion-navbar *navbar>
+  <ion-title>Kursinformationen</ion-title>
+
+</ion-navbar>
+
+<ion-content padding class="page1">
+  
+  <button *ngIf="!fitness.isParticipating(Course._id)" (click)="participate(Course)" block>Teilnehmen</button>
+  <button *ngIf="fitness.isParticipating(Course._id)" (click)="departicipate(Course)" block>Teilnahme widerrufen</button>
+</ion-content>

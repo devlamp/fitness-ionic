@@ -1,0 +1,25 @@
+
+<ion-navbar *navbar>
+  <ion-title>
+    Tab 3
+  </ion-title>
+</ion-navbar>
+
+<ion-content class="page3">
+  <ion-list>
+    <ion-item style="padding-bottom: 30px;">
+      <ion-label>Name</ion-label>
+      <ion-input [(ngModel)]="username" type="text"></ion-input>
+      <button outline item-right (click)="addUser()">
+      <ion-icon name="add"></ion-icon>
+      Benutzer hinzufügen
+    </button>
+    </ion-item>
+    <button ion-item *ngFor="#user of fitness.users" (click)="select(user)">
+      <h2>{{user.name}}</h2>
+    <ion-badge item-right>{{user?.courses?.length}}</ion-badge>
+    <ion-badge *ngIf="selected(user)" item-right>AUSGEWÄHLT</ion-badge>
+    </button>
+  </ion-list>
+</ion-content>
+

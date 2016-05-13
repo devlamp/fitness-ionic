@@ -1,0 +1,33 @@
+<!--<ion-tabs>
+  <ion-tab [root]="tab1Root" tabTitle="Tab 1" tabIcon="pulse"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="Tab 2" tabIcon="chatbubbles"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="Tab 3" tabIcon="cog"></ion-tab>
+</ion-tabs>-->
+
+<!--<ion-tabs>
+  <ion-tab [root]="tab1Root" tabTitle="Tab 1" tabIcon="pulse"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="Tab 2" tabIcon="chatbubbles"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="Tab 3" tabIcon="cog"></ion-tab>
+</ion-tabs>-->
+
+<ion-navbar *navbar>
+  <ion-title>{{Category.name}}</ion-title>
+  <ion-buttons end>
+    <button  (click)="addCourse()">
+      <ion-icon name="create" item-left></ion-icon>
+    </button>
+  </ion-buttons>
+  
+</ion-navbar>
+
+<ion-content>
+<ion-list>
+  <button *ngFor="#course of fitness.coursecategory" ion-item (click)="onNavigate(course)">
+    <ion-icon [name]="fitness.getIcon(course.category)" item-left></ion-icon>
+    <h2>{{course.title}}</h2>
+    <h3>{{course.difficulty}}</h3>
+    <p>{{course.location}}</p>
+    <ion-badge open item-right>{{course.participants.length}}/{{course.maxParticipants}}</ion-badge>
+  </button>
+</ion-list>
+</ion-content>
