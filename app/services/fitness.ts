@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class FitnessService {
-    userid: String = "572ca6f80dc1954441270d7a";
+    userid: String = "5735b85352fc8b2e6824a075";
     //server: String = "http://192.168.178.21:3000/";
     server: string = "http://ec2-52-91-228-142.compute-1.amazonaws.com:3000/"
     constructor( @Inject(Http) private http: Http) {
