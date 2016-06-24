@@ -3,11 +3,11 @@ import {StatusBar} from 'ionic-native';
 import {TabsPage} from './pages/tabs/tabs';
 import {NewPage} from './pages/new/new';
 import {FitnessService} from "./services/fitness";
-
+import {ApiClientService} from "./services/index"
 @App({
   templateUrl: 'build/app.html',
   config: {}, // http://ionicframework.com/docs/v2/api/config/Config/
-  providers: [FitnessService]
+  providers: [FitnessService, ApiClientService]
 })
 export class MyApp {
   rootPage: any = TabsPage;
