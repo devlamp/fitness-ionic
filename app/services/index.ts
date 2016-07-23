@@ -1,5 +1,5 @@
 /* tslint:disable */
-import { Injectable } from 'angular2/core';
+import { Injectable, Inject } from 'angular2/core';
 import { Http, Response, Headers, URLSearchParams } from 'angular2/http';
 import { UserModel, Object, RegisterExternalBindingModel, CategoryDTO, CategoryBuildDTO, CourseDTO, CourseBuildDTO, CourseDetailDTO, UserDTO, Date, Course, Location, User, Category } from './models';
 import 'rxjs/Rx';
@@ -12,7 +12,7 @@ import 'rxjs/Rx';
 export class ApiClientService {
 	domain:string;
   
-  constructor(public http: Http){
+  constructor(@Inject(Http) public http: Http){
     this.domain = 'https://findmyfitness.azurewebsites.net';
   }
   /*
@@ -44,7 +44,6 @@ export class ApiClientService {
 			
 		payload['userModel'] = userModel;
 		let uri = `/api/Account/Register`;
-	  
 		return this.http
 			.post(this.domain + uri, JSON.stringify(userModel), { headers: headers, search: queryParameters })
 			.map((res: Response) => {
