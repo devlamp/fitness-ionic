@@ -20,6 +20,9 @@
     <ion-badge item-right>{{user?.courses?.length}}</ion-badge>
     <ion-badge *ngIf="selected(user)" item-right>AUSGEWÄHLT</ion-badge>
     </button>
+    <button ion-item (click)="login()">
+      <h2>Facebook Login</h2>
+    </button>
   </ion-list>
 </ion-content>
 

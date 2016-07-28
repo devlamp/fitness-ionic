@@ -4,10 +4,11 @@ import {TabsPage} from './pages/tabs/tabs';
 import {NewPage} from './pages/new/new';
 import {FitnessService} from "./services/fitness";
 import {ApiClientService} from "./services/index"
+import {Facebook} from "./providers/facebook/facebook";
 @App({
   templateUrl: 'build/app.html',
   config: {}, // http://ionicframework.com/docs/v2/api/config/Config/
-  providers: [FitnessService, ApiClientService]
+  providers: [FitnessService, ApiClientService,Facebook]
 })
 export class MyApp {
   rootPage: any = TabsPage;
