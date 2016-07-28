@@ -1,4 +1,6 @@
 import {Page, NavController} from 'ionic-angular';
+import { GoogleMap, GoogleMapsEvent } from 'ionic-native';
+// --variable API_KEY_FOR_ANDROID="AIzaSyBsV9L67Bz9TlD848XiKAmUa4OgJ9qn9qA" --variable API_KEY_FOR_IOS="AIzaSyBeRGZG_iAgGaJTMZfr9SG7eg-gZgMmHvM"
 import {Page1} from '../page1/page1';
 import {Page2} from '../page2/page2';
 import {Page3} from '../page3/page3';
@@ -28,6 +30,8 @@ export class NewPage {
   
   onNavigate(course: any) {
     this._nav.push(Page1, { course: course});
+    let map = new GoogleMap('gmap');
+    map.on(GoogleMapsEvent.MAP_READY).subscribe(() => console.log('Map is ready!'));
   }
   
   addCourse() {
